@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Psychic Game</title>
+
+ 	<h1>The Psychic Game</h1>
+
+</head>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+
+<body>
+
+	<script type="text/javascript">
+
+			<h2>"Guess what letter I'm thinking of"</h2>
+
+		// $(document).ready(function() {
+
+ 
+      // set a variable for wins
+		// set a variable for losses
+      var wins = 0;
+      var losses = 0;
+
+      // set a variable for user guess
+      var userguesssletter;
+
+		// set a variable for guesses left starting at 10
+		var guessesleft = 10;
+
+
+
+      // create an array of letters
+      var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r" "s", "t", "u", "v", "x", "y", "z"];
+
+	// pick one random letter and set to computer guess letter variable
+      var computerguessletter= letters[Math.floor(Math.random() * letters.length)];
+
+
+      // reset guesses if at 0
+
+      if guessesleft = 0;
+      // then ....reset
+
+
+// 		 When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
+
+// 		When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
+//  -->
+
+    
+
+
+    // });
+
+
+	
+	<h3 id="wins"> Wins: 
+	<!-- 	(# of times the user has guessed the letter correctly) -->
+	</h3>
+
+	<h3 id="losses"> Losses: 
+	<!-- (# of times the user has failed to guess the letter correctly after exhausting all guesses) -->
+	</h3>
+	<h2>Guesses Left: 
+	<!-- (# of guesses left. This will update) -->
+	</h3>
+	<h2>Your Guesses So Far: 
+	<!-- 	(the specific letters that the user typed up to 10. Display these until the user either wins or loses.) -->
+	</h2>
+
+
+
+	</body>
+
+</script>
+</html>
