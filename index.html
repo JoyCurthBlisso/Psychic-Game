@@ -1,81 +1,135 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Psychic Game</title>
+	<head>
+	  <meta charset="UTF-8">
+	  <title>Psychic Game</title>
 
- 	<h1>The Psychic Game</h1>
 
-</head>
-
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-
+	</head>
 
 <body>
+ 
+	<h1>The Psychic Game</h1>
+	<h3>Guess what letter I'm thinking of</h3>
+
+	<h3 id= "wins"> Wins: </h3>
+		
+			
+	<h3 id= "losses"> Losses: </h3>
+			
+			
+	<h3 id="guessesleft">Guesses Left: </h3>
+		
+
+	<h3 id="guesssofar">Your Guesses So Far:  </h3>
+
 
 	<script type="text/javascript">
 
-			<h2>"Guess what letter I'm thinking of"</h2>
+			
+	  		//set a variable for wins
+			// set a variable for losses
+	      	var wins = 0;
+	      	var winstext = document.getElementById("wins");
+	      	document.getElementById("wins").innerHTML = 
+	      	"Wins: " + wins;
+		
 
-		// $(document).ready(function() {
+	      	var losses = 0;
+	      	var lossestext = document.getElementById("losses");
+	      	document.getElementById("losses").innerHTML = 
+	      	"Losses: " + losses;
+		
 
- 
-      // set a variable for wins
-		// set a variable for losses
-      var wins = 0;
-      var losses = 0;
+			// set a variable for guesses left starting at 9
+			var guessesleft = 9;
+			var guesseslefttext = document.getElementById("guessesleft");
+	      	document.getElementById("guessesleft").innerHTML = 
+	      	"Guesses Left: " + guessesleft;
+		
 
-      // set a variable for user guess
-      var userguesssletter;
+		     // create an array of letters
+		     var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r","s", "t", "u", "v", "x", "y", "z"];
 
-		// set a variable for guesses left starting at 10
-		var guessesleft = 10;
-
-
-
-      // create an array of letters
-      var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r" "s", "t", "u", "v", "x", "y", "z"];
-
-	// pick one random letter and set to computer guess letter variable
-      var computerguessletter= letters[Math.floor(Math.random() * letters.length)];
-
-
-      // reset guesses if at 0
-
-      if guessesleft = 0;
-      // then ....reset
-
-
-// 		 When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
-
-// 		When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
-//  -->
-
-    
+		     
+			// pick one random letter and set to computer guess letter variable
+	      	var computerguessrandomletter= Math.floor(Math.random() * letters.length);
+	      	console.log(computerguessrandomletter);
 
 
-    // });
+	      	// set a variable for user guess and set it to lower case
+	      	var userGuess;
+      		var userGuessLetter;
+
+
+      		// <input type = "text" id="userGuessLetter" onkeyup="myFunction()">
+
+	      	// if guessesleft is more then zero
+	      	if (guessesleft > 0){
+
+	      		console.log(guessesleft);
+
+
+			//capture key and convert to lower case
+      		function myFunction(){
+
+      			document.onkeyup = function(event) {
+        		userGuess.textContent = event.key;
+        		userGuess.toLowerCase();
+        		console.log(userGuess);
+     			 };
+      			
+
+      			 // & compare computerguessletter to userguessletter
+      		 	if (computerguessrandomletter === userGuessLetter) {
+        	 	// if the letter is the same then increase wins by 1 and clear userguessesletter and display
+		      	// & reset computerguessletter
+
+     	 		}
+      	
+     		 	else {
+
+     		 	guessesleft = guessesleft - 1;
+     		 	console.log(guessesleft);
+     		 	alert
+     		 	console.log(userGuess)
+
+
+     		 	 //else computerguessletter and userguessletter is not the same then display letter on yourguesssofar with a comma
+     		 	 // when a key is clicked by user display on screen in your guesses so far
+     		 	 var yourguesssofar = [];
+
+     		 	 //
+       		 
+      			}
+
+
+	      		;
+	      	}
+
+
+      		}
+
+      		
+		     // reset guesses if at 0
+
+		     // if guessesleft = 0;
+		     // then ....reset
+
+
+			// When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
+
+			//When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
+
+
+			
+	</script>
 
 
 	
-	<h3 id="wins"> Wins: 
-	<!-- 	(# of times the user has guessed the letter correctly) -->
-	</h3>
+	
+</body>
+	
 
-	<h3 id="losses"> Losses: 
-	<!-- (# of times the user has failed to guess the letter correctly after exhausting all guesses) -->
-	</h3>
-	<h2>Guesses Left: 
-	<!-- (# of guesses left. This will update) -->
-	</h3>
-	<h2>Your Guesses So Far: 
-	<!-- 	(the specific letters that the user typed up to 10. Display these until the user either wins or loses.) -->
-	</h2>
-
-
-
-	</body>
-
-</script>
 </html>
