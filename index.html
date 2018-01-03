@@ -8,7 +8,7 @@
 
 	</head>
 
-<body>
+<body id="char">
  
 	<h1>The Psychic Game</h1>
 	<h3>Guess what letter I'm thinking of</h3>
@@ -72,44 +72,80 @@
 
 
 			//capture key and convert to lower case
-      		function myFunction(){
+      		// function myFunction(){
 
-      			document.onkeyup = function(event) {
-        		userGuess.textContent = event.key;
-        		userGuess.toLowerCase();
-        		console.log(userGuess);
-     			 };
-      			
 
-      			 // & compare computerguessletter to userguessletter
+				var userGuessLetter =document.getElementById("char")
+				userGuessLetter.onkeyup=function(e){
+				var userGuessLetter=window.event || e;
+				alert(e.key);
+
+
+				 // & compare computerguessletter to userguessletter
       		 	if (computerguessrandomletter === userGuessLetter) {
         	 	// if the letter is the same then increase wins by 1 and clear userguessesletter and display
 		      	// & reset computerguessletter
+
+		      		wins = +1;
+
+		      		var winstext = document.getElementById("wins");
+	      			document.getElementById("wins").innerHTML = 
+	      			"Wins: " + wins;
+		      		delete userGuessLetter;
+		      		delete computerguessletter;
 
      	 		}
       	
      		 	else {
 
-     		 	guessesleft = guessesleft - 1;
-     		 	console.log(guessesleft);
-     		 	alert
-     		 	console.log(userGuess)
+	     		 	//subtract one from guesses and append guess to array of guess so far
+
+	     		 	guessesleft = guessesleft - 1;
+
+	     		 	// if (guessesleft = 0){
 
 
-     		 	 //else computerguessletter and userguessletter is not the same then display letter on yourguesssofar with a comma
-     		 	 // when a key is clicked by user display on screen in your guesses so far
-     		 	 var yourguesssofar = [];
+	     		 	// 	losses + 1;
+	      			// 	var lossestext = document.getElementById("losses");
+	      			// 	document.getElementById("losses").innerHTML = 
+	      			// 	"Losses: " + losses;
+	      			// }
 
-     		 	 //
+
+	     		 	// else{
+
+	     		 	//Display letters guessed	
+	     		 	var yourguesssofar = [];
+	     		 	yourguesssofar.push(userGuessLetter.key);
+	     		 	console.log(userGuessLetter.key);
+
+	     		 	// var guessessofartext = document.getElementById("yourguesssofar");
+		      		// document.getElementById("yourguesssofar").innerHTML = 
+		      		// "Your Guesses So Far: " + guessessofartext;
+
+		      		//updated guess left
+		      		var guesseslefttext = document.getElementById("guessesleft");
+		      		document.getElementById("guessesleft").innerHTML = 
+		      		"Guesses Left: " + guessesleft;
+
+
+	     		 	// }
+
+
        		 
       			}
+
+
+
+				}
+
 
 
 	      		;
 	      	}
 
 
-      		}
+      		// }
 
       		
 		     // reset guesses if at 0
