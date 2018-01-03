@@ -78,7 +78,7 @@
 				var userGuessLetter =document.getElementById("char")
 				userGuessLetter.onkeyup=function(e){
 				var userGuessLetter=window.event || e;
-				alert(e.key);
+				// alert(e.key);
 
 
 				 // & compare computerguessletter to userguessletter
@@ -93,6 +93,11 @@
 	      			"Wins: " + wins;
 		      		delete userGuessLetter;
 		      		delete computerguessletter;
+		      		guessesleft = 9;
+		      		var guesseslefttext = document.getElementById("guessesleft");
+		      		document.getElementById("guessesleft").innerHTML = 
+		      		"Guesses Left: " + guessesleft;
+
 
      	 		}
       	
