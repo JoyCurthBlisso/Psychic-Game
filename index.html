@@ -51,78 +51,99 @@
 			// pick one random letter and set to computer guess letter variable
 	      	var computerguessrandomletter= letters[Math.floor(Math.random() * letters.length)];
 	      	console.log(computerguessrandomletter);
+
 	      	// set a variable for user guess and set it to lower case
 	      	var userGuess;
       		var userGuessLetter;
       		// <input type = "text" id="userGuessLetter" onkeyup="myFunction()">
+
 	      	// if guessesleft is more then zero
-	      	if (guessesleft > 0){
+	      
+	      		// if (guessesleft > 0 ){
 	      		console.log(guessesleft);
-			//capture key and convert to lower case
-      		// function myFunction(){
+				//capture key and convert to lower case
+      			// function myFunction(){
+
 				var userGuessLetter =document.getElementById("char")
 				userGuessLetter.onkeyup=function(e){
 				var userGuessLetter=window.event || e;
 
 				// alert(e.key);
-					 // & compare computerguessletter to userguessletter
-	      		 	if (computerguessrandomletter === userGuessLetter.key) {
-	        	 	// if the letter is the same then increase wins by 1 and clear userguessesletter and display
-			      	// & reset computerguessletter
-			      		wins = +1;
-			      		var winstext = document.getElementById("wins");
-		      			document.getElementById("wins").innerHTML = 
-		      			"Wins: " + wins;
-			      		delete userGuessLetter;
-			      		delete computerguessletter;
-			      		guessesleft = 9;
-			      		var guesseslefttext = document.getElementById("guessesleft");
-			      		document.getElementById("guessesleft").innerHTML = 
-			      		"Guesses Left: " + guessesleft;
-	     	 		}
-      	
-	     		 	else {
-		     		 	//subtract one from guesses and append guess to array of guess so far
-		     		 	if (guessesleft > 0) {
-		     		 	guessesleft = guessesleft - 1;
-		     		 	// if (guessesleft = 0){
-		     		 	// 	losses + 1;
-		      			// 	var lossestext = document.getElementById("losses");
-		      			// 	document.getElementById("losses").innerHTML = 
-		      			// 	"Losses: " + losses;
-		      			// }
-		     		 	// else{
-		     		 	//Display letters guessed	
-		     		 	var yourguesssofar = [];
-		     		 	yourguesssofar.push(userGuessLetter.key);
-		     		 	console.log(userGuessLetter.key);
-		     		 	// var guessessofartext = document.getElementById("yourguesssofar");
-			      		// document.getElementById("yourguesssofar").innerHTML = 
-			      		// "Your Guesses So Far: " + guessessofartext;
-			      		//updated guess left
-			      		var guesseslefttext = document.getElementById("guessesleft");
-			      		document.getElementById("guessesleft").innerHTML = 
-			      		"Guesses Left: " + guessesleft;
-		     		 	}
-		     		 	//if you loss reset and increase lossses by 1
-		     		 	else {
 
-		     		 		losses = +1;
-				      		var lossestext = document.getElementById("losses");
-			      			document.getElementById("losses").innerHTML = 
-			      			"Losses: " + losses;
+
+						 // & compare computerguessletter to userguessletter
+		      		 	if (computerguessrandomletter === userGuessLetter.key) {
+		        	 	// if the letter is the same then increase wins by 1 and clear userguessesletter and display
+				      	// & reset computerguessletter
+				      		wins = +1;
+				      		var winstext = document.getElementById("wins");
+			      			document.getElementById("wins").innerHTML = 
+			      			"Wins: " + wins;
 				      		delete userGuessLetter;
 				      		delete computerguessletter;
 				      		guessesleft = 9;
+
 				      		var guesseslefttext = document.getElementById("guessesleft");
 				      		document.getElementById("guessesleft").innerHTML = 
 				      		"Guesses Left: " + guessesleft;
 
-		     		 	}
+				      		// //new computer guess
+				      		// var computerguessrandomletter= letters[Math.floor(Math.random() * letters.length)];
+	      					// console.log(computerguessrandomletter);
+
+
+		     	 		}
+	      	
+		     		 	else {
+			     		 	//subtract one from guesses and append guess to array of guess so far
+			     		 	if (guessesleft > 0) {
+			     		 	guessesleft = guessesleft - 1;
+			     		 	// if (guessesleft = 0){
+			     		 	// 	losses + 1;
+			      			// 	var lossestext = document.getElementById("losses");
+			      			// 	document.getElementById("losses").innerHTML = 
+			      			// 	"Losses: " + losses;
+			      			// }
+			     		 	// else{
+			     		 	//Display letters guessed	
+
+			     		 	var yourguesssofar = [];
+			     		 	yourguesssofar.push(userGuessLetter.key);
+			     		 	console.log(userGuessLetter.key);
+			     		 	// var guessessofartext = document.getElementById("yourguesssofar");
+				      		// document.getElementById("yourguesssofar").innerHTML = 
+				      		// "Your Guesses So Far: " + guessessofartext;
+				      		//updated guess left
+
+				      		var guesseslefttext = document.getElementById("guessesleft");
+				      		document.getElementById("guessesleft").innerHTML = 
+				      		"Guesses Left: " + guessesleft;
+
+			     		 	}
+			     		 	//if you loss reset and increase lossses by 1
+			     		 	else {
+
+			     		 		losses = +1;
+					      		var lossestext = document.getElementById("losses");
+				      			document.getElementById("losses").innerHTML = 
+				      			"Losses: " + losses;
+					      		delete userGuessLetter;
+					      		delete computerguessletter;
+					      		guessesleft = 9;
+					      		var guesseslefttext = document.getElementById("guessesleft");
+					      		document.getElementById("guessesleft").innerHTML = 
+					      		"Guesses Left: " + guessesleft;
+
+					      		//new computer guess
+					      		// var computerguessrandomletter= letters[Math.floor(Math.random() * letters.length)];
+	      						// console.log(computerguessrandomletter);
+
+
+			     		 	}
 
 	       		 
 	      			}
-				}
+				// }	
 	      		
 	      	}
       		
